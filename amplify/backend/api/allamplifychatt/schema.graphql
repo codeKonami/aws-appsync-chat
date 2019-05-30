@@ -1,5 +1,5 @@
-type User 
-  @model 
+type User
+  @model
   @auth(rules: [{ allow: owner, ownerField: "id", queries: null }]) {
   id: ID!
   username: String!
@@ -25,9 +25,9 @@ type Conversation
 	updatedAt: String
 }
 
-type Message 
-  @model(subscriptions: null, queries: null) 
-  @auth(rules: [{ allow: owner, ownerField: "authorId" }]) {
+type Message
+  @model(subscriptions: null, queries: null)
+  @auth(rules: [{ allow: owner, ownerField: "authorId", operations: [create, update, delete]}]) {
   id: ID!
   author: User @connection(name: "UserMessages", keyField: "authorId")
   authorId: String
@@ -38,7 +38,7 @@ type Message
 	updatedAt: String
 }
 
-type ConvoLink 
+type ConvoLink
   @model(
     mutations: { create: "createConvoLink", update: "updateConvoLink" }
     queries: null
