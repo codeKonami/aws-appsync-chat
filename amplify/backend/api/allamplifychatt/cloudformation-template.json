@@ -7,16 +7,6 @@
             "Description": "The name of the AppSync API",
             "Default": "AppSyncSimpleTransform"
         },
-        "DynamoDBModelTableReadIOPS": {
-            "Type": "Number",
-            "Description": "The number of read IOPS the table should support.",
-            "Default": 5
-        },
-        "DynamoDBModelTableWriteIOPS": {
-            "Type": "Number",
-            "Description": "The number of write IOPS the table should support.",
-            "Default": 5
-        },
         "AuthCognitoUserPoolId": {
             "Type": "String",
             "Description": "The id of an existing User Pool to connect. If this is changed, a user pool will not be created for you.",
@@ -145,14 +135,7 @@
                         "AttributeType": "S"
                     }
                 ],
-                "ProvisionedThroughput": {
-                    "ReadCapacityUnits": {
-                        "Ref": "DynamoDBModelTableReadIOPS"
-                    },
-                    "WriteCapacityUnits": {
-                        "Ref": "DynamoDBModelTableWriteIOPS"
-                    }
-                },
+                "BillingMode": "PAY_PER_REQUEST",
                 "StreamSpecification": {
                     "StreamViewType": "NEW_AND_OLD_IMAGES"
                 }
@@ -748,14 +731,7 @@
                         "AttributeType": "S"
                     }
                 ],
-                "ProvisionedThroughput": {
-                    "ReadCapacityUnits": {
-                        "Ref": "DynamoDBModelTableReadIOPS"
-                    },
-                    "WriteCapacityUnits": {
-                        "Ref": "DynamoDBModelTableWriteIOPS"
-                    }
-                },
+                "BillingMode": "PAY_PER_REQUEST",
                 "StreamSpecification": {
                     "StreamViewType": "NEW_AND_OLD_IMAGES"
                 }
@@ -1099,14 +1075,7 @@
                         "AttributeType": "S"
                     }
                 ],
-                "ProvisionedThroughput": {
-                    "ReadCapacityUnits": {
-                        "Ref": "DynamoDBModelTableReadIOPS"
-                    },
-                    "WriteCapacityUnits": {
-                        "Ref": "DynamoDBModelTableWriteIOPS"
-                    }
-                },
+                "BillingMode": "PAY_PER_REQUEST",
                 "StreamSpecification": {
                     "StreamViewType": "NEW_AND_OLD_IMAGES"
                 },
@@ -1122,14 +1091,7 @@
                         "Projection": {
                             "ProjectionType": "ALL"
                         },
-                        "ProvisionedThroughput": {
-                            "ReadCapacityUnits": {
-                                "Ref": "DynamoDBModelTableReadIOPS"
-                            },
-                            "WriteCapacityUnits": {
-                                "Ref": "DynamoDBModelTableWriteIOPS"
-                            }
-                        }
+                        "BillingMode": "PAY_PER_REQUEST"
                     },
                     {
                         "IndexName": "gsi-ConvoMsgs",
@@ -1146,14 +1108,7 @@
                         "Projection": {
                             "ProjectionType": "ALL"
                         },
-                        "ProvisionedThroughput": {
-                            "ReadCapacityUnits": {
-                                "Ref": "DynamoDBModelTableReadIOPS"
-                            },
-                            "WriteCapacityUnits": {
-                                "Ref": "DynamoDBModelTableWriteIOPS"
-                            }
-                        }
+                        "BillingMode": "PAY_PER_REQUEST"
                     }
                 ]
             }
@@ -1580,14 +1535,7 @@
                         "AttributeType": "S"
                     }
                 ],
-                "ProvisionedThroughput": {
-                    "ReadCapacityUnits": {
-                        "Ref": "DynamoDBModelTableReadIOPS"
-                    },
-                    "WriteCapacityUnits": {
-                        "Ref": "DynamoDBModelTableWriteIOPS"
-                    }
-                },
+                "BillingMode": "PAY_PER_REQUEST",
                 "StreamSpecification": {
                     "StreamViewType": "NEW_AND_OLD_IMAGES"
                 },
@@ -1603,14 +1551,7 @@
                         "Projection": {
                             "ProjectionType": "ALL"
                         },
-                        "ProvisionedThroughput": {
-                            "ReadCapacityUnits": {
-                                "Ref": "DynamoDBModelTableReadIOPS"
-                            },
-                            "WriteCapacityUnits": {
-                                "Ref": "DynamoDBModelTableWriteIOPS"
-                            }
-                        }
+                        "BillingMode": "PAY_PER_REQUEST"
                     },
                     {
                         "IndexName": "gsi-AssociatedLinks",
@@ -1623,14 +1564,7 @@
                         "Projection": {
                             "ProjectionType": "ALL"
                         },
-                        "ProvisionedThroughput": {
-                            "ReadCapacityUnits": {
-                                "Ref": "DynamoDBModelTableReadIOPS"
-                            },
-                            "WriteCapacityUnits": {
-                                "Ref": "DynamoDBModelTableWriteIOPS"
-                            }
-                        }
+                        "BillingMode": "PAY_PER_REQUEST"
                     }
                 ]
             }
